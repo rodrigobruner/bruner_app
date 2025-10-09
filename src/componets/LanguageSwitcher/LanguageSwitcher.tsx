@@ -4,7 +4,7 @@ import * as S from "./LanguageSwitcher.styles";
 import { Ca, Br } from 'react-flag-icons';
 
 export default function LanguageSwitcher() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const language = (i18n.resolvedLanguage ?? i18n.language).split("-")[0];
 
   const handleChangeLanguage = (lng: "en" | "pt") => {
