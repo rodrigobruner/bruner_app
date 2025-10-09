@@ -18,7 +18,17 @@ export const MainContainer = styled.section`
     background: #1e293b;
     clip-path: polygon(0 0, 120% 0, 0 150%);
   }
+
+  /* quando for tablet ou celular */
+  @media (max-width: 768px) {
+    background: #1e293b;
+
+    &::before {
+      clip-path: none;   /* remove o corte diagonal */
+    }
+  }
 `;
+
 
 const Content = styled.div`
   position: relative;
