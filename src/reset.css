@@ -1,0 +1,61 @@
+/* reset.css */
+
+/* 1. Remove margens/paddings padrão e garante box-sizing consistente */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Garantir altura total da tela */
+html, body {
+  height: 100%;
+}
+
+/* 3. Tipografia básica */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* 4. Tornar mídia responsiva por padrão */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Remover estilos padrão de listas */
+ul, ol {
+  list-style: none;
+}
+
+/* 6. Reset para links e botões */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* 7. Inputs e formulários */
+input, textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* 8. Garantir que tabelas fiquem consistentes */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

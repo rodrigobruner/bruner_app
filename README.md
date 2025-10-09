@@ -1,56 +1,73 @@
-# 🌐 Bruner.app Website
+# React + TypeScript + Vite
 
-Bruner.app é meu website pessoal e portfólio de projetos em desenvolvimento **web e mobile**.  
-O site foi construído com [React](https://react.dev/) e inicializado via [Create React App](https://github.com/facebook/create-react-app).  
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Tecnologias Utilizadas
-- [React](https://react.dev/)  
-- [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)  
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)  
-- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)  
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## React Compiler
 
-## 📦 Scripts Disponíveis
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-No diretório do projeto, você pode executar:
+## Expanding the ESLint configuration
 
-### `npm start`
-Executa o app em **modo de desenvolvimento**.  
-Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.  
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### `npm test`
-Inicia o runner de testes em **watch mode**.  
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-### `npm run build`
-Gera a versão de **produção** na pasta `build/`.  
-Essa versão está otimizada e pronta para ser publicada no servidor.  
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-### `npm run eject`
-⚠️ Operação irreversível. Copia toda a configuração do Create React App para o projeto, dando liberdade total de customização.  
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
----
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## 🌍 Deploy
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-O site está hospedado em **Verpex cPanel**.  
-O processo de deploy é feito via **GitHub Actions + FTP**, enviando automaticamente o conteúdo da pasta `build/` para o diretório `public_html`.  
-
-👉 Veja o workflow em `.github/workflows/deploy.yml`.  
-
----
-
-## 📂 Estrutura do Projeto
-```bash
-bruner.app/
-├── public/          # Arquivos estáticos
-│   └── index.html   # HTML principal
-├── src/             # Código-fonte React
-│   ├── components/  # Componentes reutilizáveis
-│   ├── pages/       # Páginas principais
-│   ├── assets/      # Imagens, ícones, fontes
-│   └── App.js       # Componente raiz
-├── package.json     # Dependências e scripts
-└── README.md        # Documentação do projeto
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
