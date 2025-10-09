@@ -10,7 +10,7 @@ import {
 } from "./Home.styles";
 
 import { FaLinkedin, FaGithubAlt } from "react-icons/fa"
-import bruner_logo from "../../assets/bruner_logo.png"
+import bruner_logo from "../../assets/images/bruner_logo.png"
 import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
 
 
