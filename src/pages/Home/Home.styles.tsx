@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+// --------------------------------------------------
+//Home section 
 export const MainContainer = styled.section`
   position: relative;
   width: 100%;
@@ -91,6 +93,9 @@ export const HomeTitle = styled.h1`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
+
+
+
 export const HomeSubtitle = styled.h2`
   font-size: clamp(1.25rem, 3vw, 2rem);
   color: #e0e0e0;
@@ -142,4 +147,83 @@ export const Image = styled.img`
   @media (max-width: 600px) {
     width: min(280px, 70%);
   }
+`;
+
+
+
+// --------------------------------------------------
+// About section 
+
+export const AboutContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    gap: 40px;
+    padding: 80px 32px;
+  }
+`;
+
+export const RoundedImage = styled.img`
+  width: min(300px, 25%);
+  height: auto;
+  border-radius: 50%;
+  border: 6px solid #fbbf24;
+  filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.4s ease, filter 0.4s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.1);
+  }
+
+  @media (max-width: 1024px) {
+    width: min(260px, 40%);
+  }
+
+  @media (max-width: 600px) {
+    width: min(200px, 50%);
+  }
+`;
+
+export const AboutTitle = styled.h2`
+  margin: 0;
+  font-size: 3.5rem;
+  text-align: center;
+  max-width: 680px;
+  color: #1e293b;
+
+  @media (min-width: 769px) {
+    text-align: left;
+  }
+`;
+
+
+// --------------------------------------------------
+// Portifolio section 
+
+export const PortifolioContainer = styled.section`
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(130, 151, 184, 1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  }
+`;
+
+export const PortifolioTitle = styled.h2`
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fbbf24;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
 `;

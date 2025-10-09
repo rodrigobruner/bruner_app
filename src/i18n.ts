@@ -18,6 +18,12 @@ const resources = {
           twitter: "Twitter",
           ariaLabel: "Social media links",
         },
+        about: {
+          title: "Crafting digital solutions with the same passion as a guitar solo.",
+        },
+        portfolio: {
+          title: "My Portfolio",
+        },
       },
     },
   },
@@ -36,6 +42,12 @@ const resources = {
           github: "GitHub",
           twitter: "Twitter",
           ariaLabel: "Redes sociais",
+        },
+        about: {
+          title: "Criando soluções digitais com a mesma paixão de um solo de guitarra.",
+        },
+        portfolio: {
+          title: "My Portfolio",
         },
       },
     },
