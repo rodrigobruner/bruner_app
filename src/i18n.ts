@@ -23,6 +23,21 @@ const resources = {
         },
         portfolio: {
           title: "My Portfolio",
+          github: "View on GitHub",
+          projects: {
+            project1: {
+              title: "Out of the Nest",
+              description: "Out of the Nest is a mobile application designed to help families find welcoming and accessible locations — including restaurants, parks, events, or pet-friendly places.",
+            },
+            project2: {
+              title: "Vehicle Reservation System ",
+              description: "A web application built with .NET C# and Razor Pages that allows users to create and manage vehicle reservations.",
+            },
+            project3: {
+              title: "CleverOwl",
+              description: "CleverOwl is an iOS app built with Swift, designed to help users organize their tasks in a simple and effective way.",
+            },
+          },
         },
       },
     },
@@ -48,6 +63,21 @@ const resources = {
         },
         portfolio: {
           title: "My Portfolio",
+          github: "View on GitHub",
+          projects: {
+            project1: {
+              title: "Out of the Nest",
+              description: "Out of the Nest is a mobile application designed to help families find welcoming and accessible locations — including restaurants, parks, events, or pet-friendly places.",
+            },
+            project2: {
+              title: "Project 2",
+              description: "Description of Project 2.",
+            },
+            project3: {
+              title: "Project 3",
+              description: "Description of Project 3.",
+            },
+          },
         },
       },
     },
