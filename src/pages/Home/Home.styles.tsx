@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import bruner_logo from "../assets/bruner_logo.png"
-import { FaLinkedin, FaGithubAlt } from "react-icons/fa";
 
 export const MainContainer = styled.section`
   position: relative;
@@ -24,13 +22,12 @@ export const MainContainer = styled.section`
     background: #1e293b;
 
     &::before {
-      clip-path: none;   /* remove o corte diagonal */
+      clip-path: none; /* remove o corte diagonal */
     }
   }
 `;
 
-
-const Content = styled.div`
+export const Content = styled.div`
   position: relative;
   z-index: 1;
   display: flex;
@@ -47,36 +44,73 @@ const Content = styled.div`
   }
 `;
 
-const TextGroup = styled.div`
+export const TextGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   max-width: 32rem;
 `;
 
-const HomeTitle = styled.h1`
+export const LanguageSwitcher = styled.div`
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  color: #e0e0e0;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+
+  button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: inherit;
+    padding: clamp(0.375rem, 1.2vw, 0.55rem) clamp(0.75rem, 2vw, 1rem);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+
+    &[aria-pressed="true"] {
+      background: #fbbf24;
+      color: #1e293b;
+      border-color: #fbbf24;
+      font-weight: 600;
+    }
+
+    &:hover {
+      border-color: #fbbf24;
+      color: #fbbf24;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
+`;
+
+export const HomeTitle = styled.h1`
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: #fbbf24;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
 
-const HomeSubtitle = styled.h2`
+export const HomeSubtitle = styled.h2`
   font-size: clamp(1.25rem, 3vw, 2rem);
   color: #e0e0e0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   font-weight: 400;
 `;
 
-const SocialMenu = styled.nav`
+export const SocialMenu = styled.nav`
   display: flex;
   flex-wrap: wrap;
   gap: clamp(0.75rem, 2vw, 1.25rem);
 
   a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: #fbbf24;
     font-size: clamp(1rem, 2.2vw, 1.5rem);
-    transition: color 0.3s ease;
     text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: #ffecb3;
@@ -86,26 +120,9 @@ const SocialMenu = styled.nav`
   @media (max-width: 600px) {
     justify-content: center;
   }
-
-  display: flex;
-  gap: 16px; /* espaço entre os links */
-  
-  a {
-    display: flex;              /* ícone e texto lado a lado */
-    align-items: center;        /* alinha verticalmente */
-    gap: 8px;                   /* espaço entre ícone e texto */
-    color: #fbbf24;
-    font-size: 18px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #ffd95b;
-    }
-  }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: min(500px, 45%);
   height: auto;
   border-radius: 35%;
@@ -126,23 +143,3 @@ const Image = styled.img`
     width: min(280px, 70%);
   }
 `;
-
-export default function Home() {
-  return (
-    <MainContainer>
-      <Content>
-        <TextGroup>
-          <HomeTitle>Rodrigo Bruner</HomeTitle>
-          <HomeSubtitle>Full Stack Developer</HomeSubtitle>
-          <SocialMenu>
-            <a href="https://www.linkedin.com/in/rodrigobruner/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={28} color="#fbbf24" />LinkedIn</a>
-            <a href="https://github.com/rodrigobruner" target="_blank" rel="noopener noreferrer">
-                <FaGithubAlt size={28} color="#fbbf24" />GitHub</a>
-          </SocialMenu>
-        </TextGroup>
-        <Image src={bruner_logo} alt="Bruner Avatar" />
-      </Content>
-    </MainContainer>
-  )
-}
