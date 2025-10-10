@@ -1,5 +1,7 @@
+import { useCallback, useState, type MouseEvent } from "react"
 import { useTranslation } from "react-i18next"
 import {
+  Nav,
   MainContainer,
   AboutContainer,
   PortifolioContainer,
@@ -17,7 +19,9 @@ import {
   ProjectImage
 } from "./Home.styles";
 
-import { FaLinkedin, FaGithubAlt } from "react-icons/fa"
+import { FaLinkedin, FaGithubAlt, FaHome } from "react-icons/fa"
+import { BsChatHeart, BsCodeSquare } from "react-icons/bs"
+
 import bruner_logo from "../../assets/images/bruner_logo.png"
 import bruner_rock from "../../assets/images/bruner_rock.png"
 import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
@@ -27,9 +31,51 @@ import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
 export default function Home() {
 
   const { t } = useTranslation()
+  const [activeSection, setActiveSection] = useState("home")
+
+  const sections = [
+    {
+      id: "home",
+      icon: <FaHome size={28} />,
+      label: t("menu.home")
+    },
+    {
+      id: "about",
+      icon: <BsChatHeart size={28}/>,
+      label: t("menu.about")
+    },
+    {
+      id: "portfolio",
+      icon: <BsCodeSquare size={28}/>,
+      label: t("menu.portfolio")
+    }
+  ]
+
+  const handleNavClick = useCallback((event: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    event.preventDefault()
+    setActiveSection(sectionId)
+
+    const target = document.getElementById(sectionId)
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }, [])
+
   return (
     <>
-      <MainContainer>
+      <Nav>
+        <ul>
+          {sections.map(({ id, icon, label }) => (
+            <li key={id} className={id === activeSection ? "active" : undefined}>
+              <a href={`#${id}`} onClick={(event) => handleNavClick(event, id)}>
+                <span className="icon">{icon}</span>
+                <span className="label">{label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Nav>
+      <MainContainer id="home">
         <LanguageSwitcher />
         <Content>
           <TextGroup>
@@ -49,11 +95,11 @@ export default function Home() {
           <Image src={bruner_logo} alt="Bruner Avatar" />
         </Content>
       </MainContainer>
-      <AboutContainer>
+      <AboutContainer id="about">
         <RoundedImage src={bruner_rock} alt="Bruner Avatar" />
         <AboutTitle>{t("home.about.title")}</AboutTitle>
       </AboutContainer>
-      <PortifolioContainer>
+      <PortifolioContainer id="portfolio">
         <PortifolioTitle>{t("home.portfolio.title")}</PortifolioTitle>
         <ProjectsGrid>
           <ProjectCard>

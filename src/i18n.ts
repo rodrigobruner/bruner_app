@@ -4,6 +4,11 @@ import { initReactI18next } from "react-i18next"
 const resources = {
   en: {
     translation: {
+      menu: {
+        home: "Home",
+        about: "About",
+        portfolio: "Portfolio",
+      },
       home: {
         title: "Rodrigo Bruner",
         subtitle: "Full Stack Developer",
@@ -27,7 +32,7 @@ const resources = {
           projects: {
             project1: {
               title: "Out of the Nest",
-              description: "Out of the Nest is a mobile application designed to help families find welcoming and accessible locations — including restaurants, parks, events, or pet-friendly places.",
+              description: "Out of the Nest is a mobile application designed to help families find welcoming and accessible locations, including restaurants, parks, events, or pet-friendly places.",
             },
             project2: {
               title: "Vehicle Reservation System ",
@@ -44,6 +49,11 @@ const resources = {
   },
   pt: {
     translation: {
+      menu: {
+        home: "Início",
+        about: "Sobre",
+        portfolio: "Portfólio",
+      },
       home: {
         title: "Rodrigo Bruner",
         subtitle: "Desenvolvedor Full Stack",
@@ -67,15 +77,15 @@ const resources = {
           projects: {
             project1: {
               title: "Out of the Nest",
-              description: "Out of the Nest is a mobile application designed to help families find welcoming and accessible locations — including restaurants, parks, events, or pet-friendly places.",
+              description: "Out of the Nest é um aplicativo móvel projetado para ajudar famílias a encontrar locais acolhedores e acessíveis, incluindo restaurantes, parques, eventos ou lugares que aceitam animais de estimação.",
             },
             project2: {
-              title: "Project 2",
-              description: "Description of Project 2.",
+              title: "Vehicle Reservation System ",
+              description: "Uma aplicação web construída com .NET C# e Razor Pages que permite aos usuários criar e gerenciar reservas de veículos.",
             },
             project3: {
-              title: "Project 3",
-              description: "Description of Project 3.",
+              title: "CleverOwl",
+              description: "CleverOwl é um aplicativo iOS construído com Swift, projetado para ajudar os usuários a organizar suas tarefas de maneira simples e eficaz.",
             },
           },
         },
