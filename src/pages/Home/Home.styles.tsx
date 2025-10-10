@@ -4,7 +4,7 @@ import styled from "styled-components"
 // Navegation menu
 export const Nav = styled.nav`
   position: fixed;
-  width: 350px;
+  width: 400px;
   min-height: 75px;
   background: #ffffff80;
   border-radius: 40px;
@@ -419,3 +419,130 @@ export const ProjectImage = styled.img`
   height: 220px;
   object-fit: cover;
 `;
+
+
+// --------------------------------------------------
+// Rock and Roll section
+
+
+export const RockContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+    flex-wrap: wrap; /* permite quebra de linha para filhos */
+    gap: 40px;
+    padding: 80px 32px;
+  }
+`;
+
+export const RockTitle = styled.h2`
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fbbf24;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+
+  @media (max-width: 1024px) {
+    margin-top: 25px;
+   
+  } 
+`;
+
+export const RockDescription = styled.p`
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #1e293b;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 20px 40px;
+
+  @media (min-width: 769px) {
+    text-align: left;
+  }
+`;
+
+export const RockGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  grid-auto-rows: 1fr;
+
+  /* garante que o grid ocupe uma nova linha quando o pai usar row + wrap */
+  flex: 0 0 100%;
+  margin-top: 8px;
+
+  @media (min-width: 769px) {
+    margin-top: 24px;
+  }
+`;
+
+export const FlipCard = styled.div`
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+`;
+
+// This container is needed to position the front and back side
+export const FlipCardInner = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+  ${FlipCard}:hover & {
+    transform: rotateY(180deg);
+  }
+`;
+
+// Front side of the card
+export const FlipCardFront = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+`;
+
+// Back side of the card
+export const FlipCardBack = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+  h1{
+    color: #1e293b;
+  }
+
+  h2 {
+    color: #fbbf24;
+  }
+
+  .bold{
+    font-weight: 600;
+  }
+`;  
+
+
+
+
+// --------------------------------------------------
+// Footer section
+
