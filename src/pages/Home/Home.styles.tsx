@@ -62,6 +62,7 @@ export const Nav = styled.nav`
     overflow: hidden;
     height: 60px;
     width: 100%;
+    
   }
 
   .icon {
@@ -78,6 +79,10 @@ export const Nav = styled.nav`
     overflow: hidden;
     transform: translateX(-8px);
     transition: opacity 0.3s ease, max-width 0.35s ease, transform 0.35s ease;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .active {
@@ -91,18 +96,22 @@ export const Nav = styled.nav`
     justify-content: flex-start;
     gap: 8px;
     padding: 0 16px;
+    @media (max-width: 768px) {
+      max-width: 60px;
+    }
   }
 
   .active .label {
     opacity: 1;
     max-width: 140px;
     transform: translateX(0);
+
   }
 
   @media (max-width: 600px) {
-    width: 90%;
+    width: 70%;
     min-height: 60px;
-    margin: 10px auto;
+    margin: 10px 10px 10px 10px;
     left: 0;
     right: 0;
   }
