@@ -358,6 +358,12 @@ export const PortifolioTitle = styled.h2`
   text-align: center;
   width: 100%;
   margin: 0;
+  margin-bottom: 10px;
+
+  @media (max-width: 1024px) {
+    margin-top: 25px;
+   
+  } 
 `;
 
 
