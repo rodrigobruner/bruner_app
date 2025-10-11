@@ -546,3 +546,28 @@ export const FlipCardBack = styled.div`
 // --------------------------------------------------
 // Footer section
 
+export const Footer = styled.footer`
+  width: 100%;
+  min-height: 60px;
+  background: #1e293b;
+  display: flex;
+  flex-direction: column; /* ← empilha os elementos */
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  text-align: center;
+  gap: 4px; /* espaço entre o <p> e o <a> */
+
+  a {
+    color: #fbbf24;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffecb3;
+    }
+  }
+`;

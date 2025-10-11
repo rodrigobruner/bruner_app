@@ -1,4 +1,4 @@
-import { useCallback, useState, type MouseEvent } from "react"
+import { useCallback, useEffect, useMemo, useState, type MouseEvent } from "react"
 import { useTranslation } from "react-i18next"
 import {
   Nav,
@@ -24,7 +24,8 @@ import {
   FlipCard,
   FlipCardInner,
   FlipCardFront,
-  FlipCardBack
+  FlipCardBack,
+  Footer
 } from "./Home.styles";
 
 import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar } from "react-icons/fa"
@@ -48,7 +49,7 @@ export default function Home() {
   const { t } = useTranslation()
   const [activeSection, setActiveSection] = useState("home")
 
-  const sections = [
+  const sections = useMemo(() => ([
     {
       id: "home",
       icon: <FaHome size={28} />,
@@ -56,20 +57,20 @@ export default function Home() {
     },
     {
       id: "about",
-      icon: <BsChatHeart size={28}/>,
+      icon: <BsChatHeart size={28} />,
       label: t("menu.about")
     },
     {
       id: "portfolio",
-      icon: <BsCodeSquare size={28}/>,
+      icon: <BsCodeSquare size={28} />,
       label: t("menu.portfolio")
     },
     {
       id: "rock",
       icon: <FaGuitar size={28} />,
       label: t("menu.rock")
-    },
-  ]
+    }
+  ]), [t])
 
   const handleNavClick = useCallback((event: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     event.preventDefault()
@@ -80,6 +81,37 @@ export default function Home() {
       target.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const mostVisible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (mostVisible) {
+          const targetId = mostVisible.target.id
+          setActiveSection((current) => (current === targetId ? current : targetId))
+        }
+      },
+      {
+        root: null,
+        threshold: [0.3, 0.55, 0.8],
+        rootMargin: "-20% 0px -40% 0px"
+      }
+    )
+
+    const observedElements = sections
+      .map(({ id }) => document.getElementById(id))
+      .filter((element): element is HTMLElement => element !== null)
+
+    observedElements.forEach((element) => observer.observe(element))
+
+    return () => {
+      observedElements.forEach((element) => observer.unobserve(element))
+      observer.disconnect()
+    }
+  }, [sections])
 
   return (
     <>
@@ -264,6 +296,21 @@ export default function Home() {
         
         </RockGrid>
       </RockContainer>
+      <Footer>
+        <p>
+          &copy; {new Date().getFullYear()} Rodrigo Bruner. {t("home.footer.rights")}
+        </p>
+        <SocialMenu>
+          <a
+            href="https://linkedin.com/in/rodrigobruner"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={25} style={{ marginRight: "4px" }} /> 
+            {t("home.footer.contact")}
+          </a>
+        </SocialMenu>
+      </Footer>
     </>
   )
 }

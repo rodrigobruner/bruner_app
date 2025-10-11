@@ -71,6 +71,10 @@ const resources = {
             }
           }
         },
+        footer:{
+          rights: "All rights reserved.",
+          contact: "Connect with me on LinkedIn"
+        }
       },
     },
   },
@@ -100,8 +104,8 @@ const resources = {
           title: "Criando soluções digitais com a mesma paixão de um solo de guitarra.",
         },
         portfolio: {
-          title: "My Portfolio",
-          github: "View on GitHub",
+          title: "Meu Portfólio",
+          github: "Ver no GitHub",
           projects: {
             project1: {
               title: "Out of the Nest",
@@ -143,6 +147,10 @@ const resources = {
             }
           }
         },
+        footer:{
+          rights: "Todos os direitos reservados.",
+          contact: "Conecte-se comigo no LinkedIn"
+        }
       },
     },
   },
