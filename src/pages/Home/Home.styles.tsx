@@ -220,6 +220,16 @@ export const HomeSubtitle = styled.h2`
   color: #e0e0e0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   font-weight: 400;
+  margin: 0 0 4px 0; /* espaço bem pequeno abaixo */
+`;
+
+export const HomeSlogan = styled.p`
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #e0e0e0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0; /* remove o espaço padrão superior/inferior */
 `;
 
 export const SocialMenu = styled.nav`

@@ -8,6 +8,7 @@ import {
   Content,
   TextGroup,
   HomeTitle,
+  HomeSlogan,
   AboutTitle,
   HomeSubtitle,
   SocialMenu,
@@ -133,6 +134,7 @@ export default function Home() {
           <TextGroup>
             <HomeTitle>{t("home.title")}</HomeTitle>
             <HomeSubtitle>{t("home.subtitle")}</HomeSubtitle>
+            <HomeSlogan>{t("home.slogan")}</HomeSlogan>
             <SocialMenu aria-label={t("home.links.ariaLabel")}>
               <a href="https://www.linkedin.com/in/rodrigobruner/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={28} color="#fbbf24" />

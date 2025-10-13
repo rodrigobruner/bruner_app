@@ -12,7 +12,8 @@ const resources = {
       },
       home: {
         title: "Rodrigo Bruner",
-        subtitle: "Full Stack Developer",
+        subtitle: "Full-Stack Developer",
+        slogan: "Building meaningful software that connects tech, design & people",
         languageLabel: "Language",
         languageOptions: {
           en: "English",
@@ -88,7 +89,8 @@ const resources = {
       },
       home: {
         title: "Rodrigo Bruner",
-        subtitle: "Desenvolvedor Full Stack",
+        subtitle: "Desenvolvedor Full-Stack",
+        slogan: "Construindo softwares significativos que conectam tecnologia, design e pessoas",
         languageLabel: "Idioma",
         languageOptions: {
           en: "Inglês",
