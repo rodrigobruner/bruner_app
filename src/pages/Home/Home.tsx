@@ -18,6 +18,10 @@ import {
   ProjectsGrid,
   ProjectCard,
   ProjectImage,
+  TimelineContainer,
+  TimelineTitle,
+  Timeline,
+  TimelineItem,
   RockContainer,
   RockTitle,
   RockDescription,
@@ -29,7 +33,8 @@ import {
   Footer
 } from "./Home.styles";
 
-import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar } from "react-icons/fa"
+import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar} from "react-icons/fa"
+import { FaTimeline } from "react-icons/fa6";
 import { BsChatHeart, BsCodeSquare } from "react-icons/bs"
 
 import bruner_logo from "../../assets/images/bruner_logo.png"
@@ -65,6 +70,11 @@ export default function Home() {
       id: "portfolio",
       icon: <BsCodeSquare size={28} />,
       label: t("menu.portfolio")
+    },
+    {      
+      id: "timeline",
+      icon: <FaTimeline />,
+      label: t("menu.timeline")
     },
     {
       id: "rock",
@@ -194,6 +204,30 @@ export default function Home() {
           </ProjectCard>
         </ProjectsGrid>
       </PortifolioContainer>
+      <TimelineContainer id="timeline">
+          <TimelineTitle>Timeline</TimelineTitle>
+          <Timeline>
+            <TimelineItem>
+              <h3>Oct 2025</h3>
+              <h4>Finished Mobile Solutions Development</h4>
+              <h4>@ Conestoga</h4>
+              <p>I finished my mobile solution developement course at Conestoga College.</p>
+            </TimelineItem>
+            <TimelineItem>
+              <h3>Oct 2023 - Aug 2025</h3>
+              <h4>Head of software development</h4>
+              <h4>@ Videosoft</h4>
+              <p>Led a team of developers in creating innovative mobile solutions. Oversaw the entire development process, from ideation to deployment.</p>
+            </TimelineItem>
+            <TimelineItem>
+              <h3>Aug 2019 - Dec 2022</h3>
+              <h4>Software Engineering Management</h4>
+              <h4>@ Videosoft</h4>
+              <p>Managed a team of software engineers and led projects to develop scalable web applications. Implemented best practices for software development and ensured timely delivery of high-quality products.</p>
+            </TimelineItem>
+          </Timeline>
+      </TimelineContainer>
+
       <RockContainer id="rock">
         <RockTitle>Rock and Roll 🤘</RockTitle>
         <RockDescription>{t("home.rock.description")}</RockDescription>

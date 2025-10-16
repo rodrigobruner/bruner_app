@@ -8,6 +8,7 @@ const resources = {
         home: "Home",
         about: "About",
         portfolio: "Portfolio",
+        timeline: "Timeline",
         rock: "Rock",
       },
       home: {
@@ -85,7 +86,8 @@ const resources = {
         home: "Início",
         about: "Sobre",
         portfolio: "Portfólio",
-         rock: "Rock",
+        timeline: "Linha do Tempo",
+        rock: "Rock",
       },
       home: {
         title: "Rodrigo Bruner",
