@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type MouseEvent } from "reac
 import { useTranslation } from "react-i18next"
 import {
   Nav,
+  FixedIcon,
   MainContainer,
   AboutContainer,
   PortifolioContainer,
@@ -18,6 +19,10 @@ import {
   ProjectsGrid,
   ProjectCard,
   ProjectImage,
+  TimelineContainer,
+  TimelineTitle,
+  Timeline,
+  TimelineItem,
   RockContainer,
   RockTitle,
   RockDescription,
@@ -29,7 +34,8 @@ import {
   Footer
 } from "./Home.styles";
 
-import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar } from "react-icons/fa"
+import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar} from "react-icons/fa"
+import { FaTimeline } from "react-icons/fa6";
 import { BsChatHeart, BsCodeSquare } from "react-icons/bs"
 
 import bruner_logo from "../../assets/images/bruner_logo.png"
@@ -41,6 +47,7 @@ import rock_scorpions_2023 from "../../assets/images/rock_scorpions_2023.png"
 import rock_deep_purple_2017 from "../../assets/images/rock_deep_purple_2017.png"
 import rock_massacration_2023 from "../../assets/images/rock_massacration_2023.png"
 import rock_velhas_virgens_2024 from "../../assets/images/rock_velhas_virgens_2024.jpg"
+import black_ribbon from "../../assets/images/black_ribbon.png"
 import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
 
 
@@ -66,6 +73,12 @@ export default function Home() {
       icon: <BsCodeSquare size={28} />,
       label: t("menu.portfolio")
     },
+    /*
+    {      
+      id: "timeline",
+      icon: <FaTimeline />,
+      label: t("menu.timeline")
+    },*/
     {
       id: "rock",
       icon: <FaGuitar size={28} />,
@@ -128,6 +141,14 @@ export default function Home() {
           ))}
         </ul>
       </Nav>
+
+      <FixedIcon>
+        <a href="https://www.rollingstone.com/music/music-news/kiss-guitarist-ace-frehley-dead-1235448770/" target="_blank">
+          <img src={black_ribbon} alt="Black ribbon" style={{ width: '55px', height: '55px' }} />
+        </a>
+        <div className="tooltip">{t("tribute.message")}</div>
+      </FixedIcon>
+      
       <MainContainer id="home">
         <LanguageSwitcher />
         <Content>
@@ -194,6 +215,31 @@ export default function Home() {
           </ProjectCard>
         </ProjectsGrid>
       </PortifolioContainer>
+      {/*
+      <TimelineContainer id="timeline">
+          <TimelineTitle>Timeline</TimelineTitle>
+          <Timeline>
+            <TimelineItem>
+              <h3>Oct 2025</h3>
+              <h4>Finished Mobile Solutions Development</h4>
+              <h4>@ Conestoga</h4>
+              <p>I finished my mobile solution developement course at Conestoga College.</p>
+            </TimelineItem>
+            <TimelineItem>
+              <h3>Oct 2023 - Aug 2025</h3>
+              <h4>Head of software development</h4>
+              <h4>@ Videosoft</h4>
+              <p>Led a team of developers in creating innovative mobile solutions. Oversaw the entire development process, from ideation to deployment.</p>
+            </TimelineItem>
+            <TimelineItem>
+              <h3>Aug 2019 - Dec 2022</h3>
+              <h4>Software Engineering Management</h4>
+              <h4>@ Videosoft</h4>
+              <p>Managed a team of software engineers and led projects to develop scalable web applications. Implemented best practices for software development and ensured timely delivery of high-quality products.</p>
+            </TimelineItem>
+          </Timeline>
+      </TimelineContainer>
+          */}
       <RockContainer id="rock">
         <RockTitle>Rock and Roll 🤘</RockTitle>
         <RockDescription>{t("home.rock.description")}</RockDescription>
