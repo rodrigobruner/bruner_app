@@ -19,10 +19,10 @@ import {
   ProjectsGrid,
   ProjectCard,
   ProjectImage,
-  TimelineContainer,
-  TimelineTitle,
-  Timeline,
-  TimelineItem,
+  // TimelineContainer,
+  // TimelineTitle,
+  // Timeline,
+  // TimelineItem,
   RockContainer,
   RockTitle,
   RockDescription,
@@ -35,7 +35,7 @@ import {
 } from "./Home.styles";
 
 import { FaLinkedin, FaGithubAlt, FaHome, FaGuitar} from "react-icons/fa"
-import { FaTimeline } from "react-icons/fa6";
+// import { FaTimeline } from "react-icons/fa6";
 import { BsChatHeart, BsCodeSquare } from "react-icons/bs"
 
 import bruner_logo from "../../assets/images/bruner_logo.png"
