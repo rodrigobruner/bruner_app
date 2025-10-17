@@ -4,7 +4,7 @@ import styled from "styled-components"
 // Navegation menu
 export const Nav = styled.nav`
   position: fixed;
-  width: 550px;
+  width: 450px;
   min-height: 75px;
   background: #ffffff80;
   border-radius: 40px;
@@ -114,6 +114,57 @@ export const Nav = styled.nav`
     margin: 10px 10px 10px 10px;
     left: 0;
     right: 0;
+  }
+`;
+
+
+// ...existing code...
+export const FixedIcon = styled.div`
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 60px;
+  right: 40px;
+  z-index: 15;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background: #ffecb3;
+    transform: translateY(-2px);
+  }
+
+  /* tooltip (janela) — escondida por padrão, mostrada ao hover */
+  .tooltip {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    right: calc(100% + 10px); /* posiciona à esquerda com gap */
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    color: #1e293b;
+    font-size: 0.85rem;
+    text-align: center;
+    pointer-events: none; /* evita interferir no hover do ícone */
+  }
+
+  &:hover .tooltip {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `;
 

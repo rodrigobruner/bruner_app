@@ -11,6 +11,9 @@ const resources = {
         timeline: "Timeline",
         rock: "Rock",
       },
+      tribute:{
+        message: "Tribute to Ace Frehley (Spaceman) - KISS Guitarist (1951-2024)"
+      },
       home: {
         title: "Rodrigo Bruner",
         subtitle: "Full-Stack Developer",
@@ -88,6 +91,9 @@ const resources = {
         portfolio: "Portfólio",
         timeline: "Linha do Tempo",
         rock: "Rock",
+      },
+      tribute:{
+        message: "Homenagem a Ace Frehley (Spaceman) - Guitarrista do KISS (1951-2024)"
       },
       home: {
         title: "Rodrigo Bruner",

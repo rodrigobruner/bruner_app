@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState, type MouseEvent } from "reac
 import { useTranslation } from "react-i18next"
 import {
   Nav,
+  FixedIcon,
   MainContainer,
   AboutContainer,
   PortifolioContainer,
@@ -46,6 +47,7 @@ import rock_scorpions_2023 from "../../assets/images/rock_scorpions_2023.png"
 import rock_deep_purple_2017 from "../../assets/images/rock_deep_purple_2017.png"
 import rock_massacration_2023 from "../../assets/images/rock_massacration_2023.png"
 import rock_velhas_virgens_2024 from "../../assets/images/rock_velhas_virgens_2024.jpg"
+import black_ribbon from "../../assets/images/black_ribbon.png"
 import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
 
 
@@ -71,11 +73,12 @@ export default function Home() {
       icon: <BsCodeSquare size={28} />,
       label: t("menu.portfolio")
     },
+    /*
     {      
       id: "timeline",
       icon: <FaTimeline />,
       label: t("menu.timeline")
-    },
+    },*/
     {
       id: "rock",
       icon: <FaGuitar size={28} />,
@@ -138,6 +141,14 @@ export default function Home() {
           ))}
         </ul>
       </Nav>
+
+      <FixedIcon>
+        <a href="https://www.rollingstone.com/music/music-news/kiss-guitarist-ace-frehley-dead-1235448770/" target="_blank">
+          <img src={black_ribbon} alt="Black ribbon" style={{ width: '55px', height: '55px' }} />
+        </a>
+        <div className="tooltip">{t("tribute.message")}</div>
+      </FixedIcon>
+      
       <MainContainer id="home">
         <LanguageSwitcher />
         <Content>
@@ -204,6 +215,7 @@ export default function Home() {
           </ProjectCard>
         </ProjectsGrid>
       </PortifolioContainer>
+      {/*
       <TimelineContainer id="timeline">
           <TimelineTitle>Timeline</TimelineTitle>
           <Timeline>
@@ -227,7 +239,7 @@ export default function Home() {
             </TimelineItem>
           </Timeline>
       </TimelineContainer>
-
+          */}
       <RockContainer id="rock">
         <RockTitle>Rock and Roll 🤘</RockTitle>
         <RockDescription>{t("home.rock.description")}</RockDescription>
