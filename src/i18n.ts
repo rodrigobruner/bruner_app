@@ -12,7 +12,7 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "Tribute to Ace Frehley (Spaceman) - KISS Guitarist (1951-2024)"
+        message: "Tribute to Ace Frehley (Spaceman) - KISS Guitarist (1951-2025)"
       },
       home: {
         title: "Rodrigo Bruner",
@@ -93,7 +93,7 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "Homenagem a Ace Frehley (Spaceman) - Guitarrista do KISS (1951-2024)"
+        message: "Homenagem a Ace Frehley (Spaceman) - Guitarrista do KISS (1951-2025)"
       },
       home: {
         title: "Rodrigo Bruner",
