@@ -50,12 +50,32 @@ import rock_velhas_virgens_2024 from "../../assets/images/rock_velhas_virgens_20
 import black_ribbon from "../../assets/images/black_ribbon.png"
 import LanguageSwitcher from "../../componets/LanguageSwitcher/LanguageSwitcher"
 
+const parseLocalDate = (value: string) => {
+  const [year, month, day] = value.split("-").map((part) => Number(part))
+  if (!year || !month || !day) {
+    return null
+  }
+
+  const date = new Date(year, month - 1, day)
+  if (Number.isNaN(date.getTime())) {
+    return null
+  }
+
+  return date
+}
+
+const getTodayLocal = () => {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return today
+}
 
 
 export default function Home() {
 
   const { t } = useTranslation()
   const [activeSection, setActiveSection] = useState("home")
+
 
   const sections = useMemo(() => ([
     {
@@ -127,6 +147,17 @@ export default function Home() {
     }
   }, [sections])
 
+  const tributeDateValue = t("tribute.date")
+  const shouldShowTribute = useMemo(() => {
+    const tributeDate = parseLocalDate(tributeDateValue)
+    if (!tributeDate) {
+      return false
+    }
+
+    const today = getTodayLocal()
+    return tributeDate > today
+  }, [tributeDateValue])
+
   return (
     <>
       <Nav>
@@ -142,12 +173,14 @@ export default function Home() {
         </ul>
       </Nav>
 
-      <FixedIcon>
-        <a href="https://www.cbc.ca/news/canada/british-columbia/suspect-s-mother-victim-tumbler-ridge-mass-shooting-9.7085200" target="_blank">
-          <img src={black_ribbon} alt="Black ribbon" style={{ width: '55px', height: '55px' }} />
-        </a>
-        <div className="tooltip">{t("tribute.message")}</div>
-      </FixedIcon>
+      {shouldShowTribute && (
+        <FixedIcon>
+          <a href="https://www.cbc.ca/news/canada/british-columbia/suspect-s-mother-victim-tumbler-ridge-mass-shooting-9.7085200" target="_blank">
+            <img src={black_ribbon} alt="Black ribbon" style={{ width: '55px', height: '55px' }} />
+          </a>
+          <div className="tooltip">{t("tribute.message")}</div>
+        </FixedIcon>
+      )}
       
       <MainContainer id="home">
         <LanguageSwitcher />
