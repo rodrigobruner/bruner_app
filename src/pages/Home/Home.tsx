@@ -175,7 +175,7 @@ export default function Home() {
 
       {shouldShowTribute && (
         <FixedIcon>
-          <a href="https://www.cbc.ca/news/canada/british-columbia/suspect-s-mother-victim-tumbler-ridge-mass-shooting-9.7085200" target="_blank">
+          <a href={t("tribute.url")} target="_blank">
             <img src={black_ribbon} alt="Black ribbon" style={{ width: '55px', height: '55px' }} />
           </a>
           <div className="tooltip">{t("tribute.message")}</div>
