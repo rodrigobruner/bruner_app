@@ -12,7 +12,8 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "My deepest condolences to the families of the victims and to the entire community of Tumbler Ridge, B.C., during this time of profound sorrow. May you find strength, unity, and comfort in one another."
+        message: "My deepest condolences to the families of the victims and to the entire community of Tumbler Ridge, B.C., during this time of profound sorrow. May you find strength, unity, and comfort in one another.",
+        date: "2026-02-18"
       },
       home: {
         title: "Rodrigo Bruner",
@@ -93,7 +94,8 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "Meus mais sinceros sentimentos aos familiares das vítimas e a toda a comunidade de Tumbler Ridge, B.C., neste momento de profunda dor. Que encontrem força, união e conforto uns nos outros."
+        message: "Meus mais sinceros sentimentos aos familiares das vítimas e a toda a comunidade de Tumbler Ridge, B.C., neste momento de profunda dor. Que encontrem força, união e conforto uns nos outros.",
+        date: "2026-02-18"
       },
       home: {
         title: "Rodrigo Bruner",
