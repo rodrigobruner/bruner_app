@@ -141,8 +141,8 @@ export const FixedIcon = styled.div`
   /* tooltip (janela) — escondida por padrão, mostrada ao hover */
   .tooltip {
     position: absolute;
-    width: 150px;
-    height: 80px;
+    width: 250px;
+    height: 150px;
     right: calc(100% + 10px); /* posiciona à esquerda com gap */
     top: 50%;
     transform: translateY(-50%);
