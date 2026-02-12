@@ -123,7 +123,7 @@ export const FixedIcon = styled.div`
   width: 60px;
   height: 60px;
   position: fixed;
-  top: 60px;
+  top: 85%;
   right: 40px;
   z-index: 15;
   cursor: pointer;
