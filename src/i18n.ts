@@ -13,7 +13,8 @@ const resources = {
       },
       tribute:{
         message: "My deepest condolences to the families of the victims and to the entire community of Tumbler Ridge, B.C., during this time of profound sorrow. May you find strength, unity, and comfort in one another.",
-        date: "2026-02-18"
+        date: "2026-02-18",
+        url:"https://www.cbc.ca/news/canada/british-columbia/suspect-s-mother-victim-tumbler-ridge-mass-shooting-9.7085200"
       },
       home: {
         title: "Rodrigo Bruner",
@@ -95,7 +96,8 @@ const resources = {
       },
       tribute:{
         message: "Meus mais sinceros sentimentos aos familiares das vítimas e a toda a comunidade de Tumbler Ridge, B.C., neste momento de profunda dor. Que encontrem força, união e conforto uns nos outros.",
-        date: "2026-02-18"
+        date: "2026-02-18",
+        url:"https://g1.globo.com/mundo/noticia/2026/02/11/ataque-a-tiros-no-canada-atentados-sao-raros-no-pais-que-tem-leis-rigidas-para-o-porte-de-armas.ghtml"
       },
       home: {
         title: "Rodrigo Bruner",
