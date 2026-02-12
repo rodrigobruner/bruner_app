@@ -12,7 +12,7 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "Tribute to Ace Frehley (Spaceman) - KISS Guitarist (1951-2025)"
+        message: "My deepest condolences to the families of the victims and to the entire community of Tumbler Ridge, B.C., during this time of profound sorrow. May you find strength, unity, and comfort in one another."
       },
       home: {
         title: "Rodrigo Bruner",
@@ -93,7 +93,7 @@ const resources = {
         rock: "Rock",
       },
       tribute:{
-        message: "Homenagem a Ace Frehley (Spaceman) - Guitarrista do KISS (1951-2025)"
+        message: "Meus mais sinceros sentimentos aos familiares das vítimas e a toda a comunidade de Tumbler Ridge, B.C., neste momento de profunda dor. Que encontrem força, união e conforto uns nos outros."
       },
       home: {
         title: "Rodrigo Bruner",
